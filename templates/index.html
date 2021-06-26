@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='src/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='src/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='src/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='src/site.webmanifest') }}">
+    <title>Fuyuna Start Page!</title>
+    
+    <!-- <link rel="stylesheet" href="./css/bulma.min.css">
+    <link rel="stylesheet" href="./css/bulma-extensions.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="grid-master">
+        <div class="grid-slave head-div" id="titleWrapper">
+        </div>
+        <div class="grid-slave res-div mainbase">
+            <div class="centered">
+                <img class="res-img" src="{{ url_for('static', filename='src/pics.png') }}">
+            </div>
+        </div>
+        <div class="grid-slave input-div mainbase">
+            <div class="centered">
+                <a id="nukeid"></a>
+                <form id="doujin" action="/doujin" method="post">
+                    <input type="text" id="nukebtn" name="nukecode" placeholder="id kudasai!" maxlength="6">
+                </form>
+                <form id="random" action="/random" method="GET"></form>
+                <button form="doujin" type="submit" name="nukebtn">Serve!</button>
+                <button form="random" name="randomNuke" type="submit">Random!</button>
+            </div>
+        </div>
+    </div>
+    <div id="master">
+        Coded by Fuyuna
+        <a href="https://github.com/nmluci">
+            <img id="master-git-img" src="{{ url_for('static', filename='src/GitHub-Mark-32px.png') }}">
+        </a>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
