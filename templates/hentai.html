@@ -14,7 +14,13 @@
 </head>
 <body onload="generateStyledTitle()">
     <div class="grid-master">
-        <div class="grid-slave head-div" id="titleWrapper"></div>
+            <div class="grid-slave head-div" id="titleWrapper"></div>
+            <div class="grid-slave master-div" id="master">
+                <a href="https://github.com/nmluci">
+                    Coded by Fuyuna
+                    <img id="master-git-img" src="{{ url_for('static', filename='src/GitHub-Mark-32px.png') }}">
+                </a>
+            </div>    
         <div class="grid-slave res-div mainbase">
             <div class="centered">
                 <!-- <img class="res-img" src="{{ url_for('static', filename='src/thumb.webp')  }}"> -->
@@ -22,28 +28,32 @@
             </div>
         </div>
         <div class="grid-slave output-div mainbase">
-            <div class="metadata-wrapper">
+            <div class="metadata-wrapper" id="metadata">
+                {% if book.id %}
                 <label class="metadata-label">Sauce</label>
                 <div class="metadata" id="nukeID">{{ book.id }}</div>
+                {% endif %}
+                {% if book.title %}
                 <label class="metadata-label">Title</label>
                 <div class="metadata" id="nukeTitle">{{ book.title.pretty}}</div>
+                {% endif %}
+                {% if book.character %}
                 <label class="metadata-label">Character</label>
                 <div class="metadata" id="nukeChar">{{ book.character }}</div>
+                {% endif %}
+                {% if book.tags %}
                 <label class="metadata-label">Tags</label>
                 <div class="metadata" id="nukeTag">{{ book.tags}}</div>
+                {% endif %}
+                {% if book.num_pages %}
                 <label class="metadata-label">Pages</label>
                 <div class="metadata" id="nukeNumPage">{{ book.num_pages}}</div>
+                {% endif %}
                 <a id="nukeid"></a>
                 <form id="random" action="/random" method="GET"></form>
                 <button form="random" name="randomNuke" type="submit">Random!</button>
             </div>
         </div>
-    </div>
-    <div id="master">
-        Coded by Fuyuna
-        <a href="https://github.com/nmluci">
-            <img id="master-git-img" src="{{ url_for('static', filename='src/GitHub-Mark-32px.png') }}">
-        </a>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
