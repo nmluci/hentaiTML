@@ -14,8 +14,14 @@
 </head>
 <body>
     <div class="grid-master">
-        <div class="grid-slave head-div" id="titleWrapper">
-        </div>
+        <div class="grid-slave head-div" id="titleWrapper"></div>
+            <div class="grid-slave master-div" id="master">
+                <a href="https://github.com/nmluci">
+                    Coded by Fuyuna
+                    <img id="master-git-img" src="{{ url_for('static', filename='src/GitHub-Mark-32px.png') }}">
+                </a>
+            </div>    
+
         <div class="grid-slave res-div mainbase">
             <div class="centered">
                 <img class="res-img" src="{{ url_for('static', filename='src/pics.png') }}">
@@ -32,12 +38,6 @@
                 <button form="random" name="randomNuke" type="submit">Random!</button>
             </div>
         </div>
-    </div>
-    <div id="master">
-        Coded by Fuyuna
-        <a href="https://github.com/nmluci">
-            <img id="master-git-img" src="{{ url_for('static', filename='src/GitHub-Mark-32px.png') }}">
-        </a>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
